@@ -9,90 +9,112 @@
       font-family: 'Poppins', sans-serif;
       background: radial-gradient(circle at top,#0f172a,#020617);
       color: #e2e8f0;
-      text-align: center;
-      padding: 20px;
-    }
-    h1 {
-      font-size: 28px;
-      background: linear-gradient(90deg,#22c55e,#3b82f6);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-    form {
-      background: rgba(30,41,59,0.9);
-      backdrop-filter: blur(10px);
-      padding: 25px;
-      border-radius: 20px;
-      max-width: 450px;
-      margin: auto;
-      box-shadow: 0 0 30px rgba(0,0,0,0.6);
-    }
-    input, select, textarea, button {
-      width: 100%;
-      margin: 10px 0;
-      padding: 12px;
-      border-radius: 10px;
-      border: none;
-      font-size: 14px;
-    }
-    input, select, textarea {
-      background: #020617;
-      color: #fff;
-    }
-    button {
-      background: linear-gradient(90deg,#22c55e,#4ade80);
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover {
-      transform: scale(1.05);
-    }
-    #certificate {
-      display: none;
-      margin-top: 30px;
-      padding: 30px;
-      border-radius: 20px;
-      background: linear-gradient(135deg,#020617,#0f172a);
-      border: 4px solid gold;
-      max-width: 550px;
-      margin-left:auto;
-      margin-right:auto;
-      box-shadow: 0 0 40px rgba(255,215,0,0.3);
-    }
-    #logo {
-      font-size: 42px;
-      margin-bottom:10px;
-    }
-    #downloadBtn {
-      margin-top:15px;
-      background: linear-gradient(90deg,#3b82f6,#60a5fa);
-    }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  background: linear-gradient(90deg,#22c55e,#3b82f6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+form {
+  background: rgba(30,41,59,0.95);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 40px rgba(0,0,0,0.7);
+}
+
+input, select, textarea {
+  width: 90%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  background: #020617;
+  color: #fff;
+  text-align: center;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  width: 95%;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(90deg,#22c55e,#4ade80);
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+#certificate {
+  display: none;
+  margin-top: 30px;
+  padding: 30px;
+  border-radius: 20px;
+  background: linear-gradient(135deg,#020617,#0f172a);
+  border: 4px solid gold;
+  max-width: 550px;
+  text-align: center;
+  box-shadow: 0 0 50px rgba(255,215,0,0.4);
+}
+
+#logo {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+#downloadBtn {
+  margin-top: 15px;
+  background: linear-gradient(90deg,#3b82f6,#60a5fa);
+}
+
   </style>
 </head>
-<body>  <h1>😎 Wela Certification Portal 😎</h1>  <form id="welaForm">
-    <input type="text" id="name" placeholder="Enter Your Name" required>
-    <input type="text" id="father" placeholder="Father's Name (If have 😁)"><select id="profession" required>
-  <option value="">Select Your Wela Level</option>
+<body>  <h1>😂🏆 Wela Certification Portal 😎🔥</h1>  <form id="welaForm">
+    <input type="text" id="name" placeholder="👤 Enter Your Name" required>
+    <input type="text" id="father" placeholder="👨 Father's Name (If have 😁)"><select id="profession" required>
+  <option value="">💼 Select Your Wela Level</option>
   <option>Wela</option>
   <option>Wela Pro</option>
   <option>Wela Pro Max</option>
   <option>Ultra Wela Pro Max</option>
 </select>
 
-<input type="text" id="skills" placeholder="Your Legendary Skills">
+<input type="text" id="skills" placeholder="⚡ Your Legendary Skills">
 
-<textarea id="reason" placeholder="Why you joining this elite wela gang?" rows="4"></textarea>
+<textarea id="reason" placeholder="🤔 Why you joining this elite wela gang?" rows="4"></textarea>
 
-<button type="submit">Get Certified 😎</button>
+<button type="submit">🚀 Get Certified 😎</button>
 
   </form>  <div id="certificate">
-    <div id="logo">🏆😂 WELA ASSOCIATION</div>
+    <div id="logo">😂🏆🔥</div>
     <h2>🎓 Certified Wela 😎</h2>
     <p id="certContent"></p>
     <p id="funnyComment"></p>
-    <button id="downloadBtn">Download Certificate</button>
+    <button id="downloadBtn">⬇️ Download Certificate</button>
   </div>  <script>
     const comments = [
       "Bhai tum toh asli level ke wela niklay 😂🔥",
@@ -121,14 +143,14 @@
       localStorage.setItem('welaResponses', JSON.stringify(responses));
 
       document.getElementById('certContent').innerHTML = `
-        <strong>Name:</strong> ${data.name}<br>
-        <strong>Father's Name:</strong> ${data.father}<br>
-        <strong>Level:</strong> ${data.profession}<br>
-        <strong>Skills:</strong> ${data.skills}<br>
-        <strong>Reason:</strong> ${data.reason}`;
+        <strong>👤 Name:</strong> ${data.name}<br>
+        <strong>👨 Father's Name:</strong> ${data.father}<br>
+        <strong>💼 Level:</strong> ${data.profession}<br>
+        <strong>⚡ Skills:</strong> ${data.skills}<br>
+        <strong>🤔 Reason:</strong> ${data.reason}`;
 
       const randomComment = comments[Math.floor(Math.random() * comments.length)];
-      document.getElementById('funnyComment').innerHTML = `<strong>Comment:</strong> ${randomComment}`;
+      document.getElementById('funnyComment').innerHTML = `<strong>😂 Comment:</strong> ${randomComment}`;
 
       document.getElementById('certificate').style.display = 'block';
     });
