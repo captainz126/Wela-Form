@@ -114,6 +114,7 @@ button:hover {
     <h2>🎓 Certified Wela 😎</h2>
     <p id="certContent"></p>
     <p id="funnyComment"></p>
+    <button id="downloadBtn">⬇️ Download Certificate</button>
   </div>  <script>
     const comments = [
       "Bhai tum toh asli level ke wela niklay 😂🔥",
@@ -143,7 +144,7 @@ button:hover {
 
       document.getElementById('certContent').innerHTML = `
         <strong>👤 Name:</strong> ${data.name}<br>
-        <strong>👨 Father's Name (If You Have 🤧):</strong> ${data.father}<br>
+        <strong>👨 Father's Name:</strong> ${data.father}<br>
         <strong>💼 Level:</strong> ${data.profession}<br>
         <strong>⚡ Skills:</strong> ${data.skills}<br>
         <strong>🤔 Reason:</strong> ${data.reason}`;
@@ -155,12 +156,18 @@ button:hover {
     });
 
     document.getElementById('downloadBtn').addEventListener('click', () => {
+      const btn = document.getElementById('downloadBtn');
+      btn.style.display = 'none';
+
       html2canvas(document.getElementById('certificate')).then(canvas => {
         const link = document.createElement('a');
         link.download = 'Certified_Wela.png';
         link.href = canvas.toDataURL();
         link.click();
+
+        btn.style.display = 'block';
       });
+    });
     });
   </script></body>
 </html>
